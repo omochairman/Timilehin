@@ -2,17 +2,17 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 20px;
+  padding: 20px 40px;
   background-color: #fff;
   border-bottom: 2px solid #ddd;
 }
 
 .header-image img {
-  width: 120px;       /* passport-like size */
+  width: 120px;      /* passport photo size */
   height: 150px;
   object-fit: cover;
-  border-radius: 5px; /* small rounded corners like a CV photo */
   border: 2px solid #333;
+  border-radius: 5px; /* subtle corners */
 }
 
 .header-text h1 {
@@ -37,7 +37,7 @@
   color: #005fa3;
 }
 
-/* Mobile responsiveness */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column;

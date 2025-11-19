@@ -1,205 +1,56 @@
-/* Reset some defaults */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
-}
-
-/* Body styling */
-body {
-  background-color: #f8f8f8;
-  color: #333;
-  line-height: 1.6;
-}
-
-/* Header Section */
 .header-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 40px 20px;
-  background-color: #ffffff;
-  border-bottom: 2px solid #ddd;
-  flex-wrap: wrap;
   gap: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-bottom: 2px solid #ddd;
+}
+
+.header-image img {
+  width: 120px;       /* passport-like size */
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px; /* small rounded corners like a CV photo */
+  border: 2px solid #333;
 }
 
 .header-text h1 {
-  font-size: 2.5rem;
-  color: #111;
+  margin: 0;
+  font-size: 2rem;
 }
 
 .header-text p {
-  font-size: 1.2rem;
+  margin: 5px 0 10px 0;
+  font-size: 1.1rem;
   color: #555;
-  margin-top: 5px;
-}
-
-.header-text nav {
-  margin-top: 15px;
 }
 
 .header-text nav a {
-  text-decoration: none;
   margin-right: 15px;
+  text-decoration: none;
   color: #0077cc;
   font-weight: bold;
-  transition: color 0.3s;
 }
 
 .header-text nav a:hover {
   color: #005fa3;
 }
 
-.header-image img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid #ddd;
-}
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-/* About Section */
-section#about {
-  padding: 60px 20px;
-  background-color: #ffffff;
-  max-width: 900px;
-  margin: 0 auto 40px auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
+  .header-image img {
+    margin-bottom: 15px;
+  }
 
-section#about h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #111;
+  .header-text nav a {
+    display: block;
+    margin: 5px 0;
+  }
 }
-
-section#about p {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 10px;
-}
-
-/* Projects Section */
-section#projects {
-  padding: 60px 20px;
-  max-width: 1000px;
-  margin: 0 auto 40px auto;
-}
-
-section#projects h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  text-align: center;
-  color: #111;
-}
-
-section.post article {
-  background-color: #ffffff;
-  margin-bottom: 40px;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-
-section.post article header h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: #0077cc;
-}
-
-section.post article header .project {
-  font-weight: bold;
-  color: #555;
-}
-
-section.post article p {
-  margin-bottom: 10px;
-  color: #555;
-}
-
-section.post article a.image.fit img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin: 15px 0;
-}
-
-section.post article a.button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #0077cc;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-top: 10px;
-  transition: background-color 0.3s;
-}
-
-section.post article a.button:hover {
-  background-color: #005fa3;
-}
-
-/* Skills Section */
-section#skills {
-  padding: 60px 20px;
-  background-color: #ffffff;
-  max-width: 900px;
-  margin: 0 auto 40px auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-
-section#skills h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  text-align: center;
-  color: #111;
-}
-
-section#skills ul {
-  list-style-type: none;
-  text-align: center;
-}
-
-section#skills ul li {
-  display: inline-block;
-  margin: 10px 15px;
-  padding: 10px 15px;
-  background-color: #0077cc;
-  color: #fff;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-/* Contact Section */
-section#contact {
-  padding: 60px 20px;
-  max-width: 900px;
-  margin: 0 auto 40px auto;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-  text-align: center;
-}
-
-section#contact h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #111;
-}
-
-section#contact p {
-  font-size: 1rem;
-  margin-bottom: 10px;
-}
-
-section#contact a {
-  color: #0077cc;
-  text-decoration: none;
-}
-
-section#contact a:hover {
-  text-decoratio

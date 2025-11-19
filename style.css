@@ -1,3 +1,22 @@
+/* --------------------------
+  Reset & Base Styles
+-------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #f8f8f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* --------------------------
+  Header Section
+-------------------------- */
 .header-container {
   display: flex;
   align-items: center;
@@ -8,22 +27,22 @@
 }
 
 .header-image img {
-  width: 120px;      /* passport photo size */
+  width: 120px;      /* passport size */
   height: 150px;
   object-fit: cover;
   border: 2px solid #333;
-  border-radius: 5px; /* subtle corners */
+  border-radius: 5px;
 }
 
 .header-text h1 {
-  margin: 0;
   font-size: 2rem;
+  margin-bottom: 5px;
 }
 
 .header-text p {
-  margin: 5px 0 10px 0;
   font-size: 1.1rem;
   color: #555;
+  margin-bottom: 10px;
 }
 
 .header-text nav a {
@@ -31,13 +50,194 @@
   text-decoration: none;
   color: #0077cc;
   font-weight: bold;
+  transition: color 0.3s;
 }
 
 .header-text nav a:hover {
   color: #005fa3;
 }
 
-/* Mobile Responsiveness */
+/* --------------------------
+  About Section
+-------------------------- */
+section#about {
+  padding: 60px 20px;
+  background-color: #fff;
+  max-width: 900px;
+  margin: 40px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+section#about h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #111;
+  text-align: center;
+}
+
+section#about p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+  line-height: 1.8;
+}
+
+/* --------------------------
+  Projects Section
+-------------------------- */
+section#projects {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: 0 auto 40px auto;
+}
+
+section#projects h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #111;
+}
+
+section.post article {
+  background-color: #fff;
+  margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+section.post article header h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #0077cc;
+}
+
+section.post article header .project {
+  font-weight: bold;
+  color: #555;
+  display: block;
+  margin-bottom: 5px;
+}
+
+section.post article p {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+section.post article a.image.fit img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+section.post article a.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0077cc;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+section.post article a.button:hover {
+  background-color: #005fa3;
+}
+
+/* --------------------------
+  Skills Section
+-------------------------- */
+section#skills {
+  padding: 60px 20px;
+  background-color: #fff;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+section#skills h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #111;
+}
+
+section#skills ul {
+  list-style: none;
+  text-align: center;
+}
+
+section#skills ul li {
+  display: inline-block;
+  margin: 10px 15px;
+  padding: 10px 15px;
+  background-color: #0077cc;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+section#skills ul li:hover {
+  transform: scale(1.05);
+}
+
+/* --------------------------
+  Contact Section
+-------------------------- */
+section#contact {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+section#contact h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+section#contact p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+section#contact a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+section#contact a:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------
+  Footer
+-------------------------- */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #222;
+  color: #fff;
+}
+
+/* --------------------------
+  Responsive Design
+-------------------------- */
+@media (max-width: 1024px) {
+  .header-container {
+    gap: 15px;
+  }
+}
+
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column;
@@ -52,5 +252,28 @@
   .header-text nav a {
     display: block;
     margin: 5px 0;
+  }
+
+  section#skills ul li {
+    display: block;
+    margin: 10px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-image img {
+    width: 100px;
+    height: 120px;
+  }
+
+  .header-text h1 {
+    font-size: 1.6rem;
+  }
+
+  section#projects h2,
+  section#skills h2,
+  section#about h2,
+  section#contact h2 {
+    font-size: 1.6rem;
   }
 }

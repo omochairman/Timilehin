@@ -1,5 +1,5 @@
 /* --------------------------
-  Reset & Base Styles
+  Base Styles
 -------------------------- */
 * {
   margin: 0;
@@ -12,6 +12,9 @@ body {
   background-color: #f8f8f8;
   color: #333;
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* --------------------------
@@ -19,34 +22,49 @@ body {
 -------------------------- */
 .header-container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
   gap: 20px;
-  padding: 20px 40px;
+  max-width: 1000px;
+  width: 100%;
+  padding: 40px 20px;
   background-color: #fff;
   border-bottom: 2px solid #ddd;
+  position: relative;
+}
+
+.header-image {
+  position: absolute;
+  top: 0;
+  right: 40px;
 }
 
 .header-image img {
-  width: 120px;      /* passport size */
-  height: 150px;
+  width: 160px;
+  height: 200px;
   object-fit: cover;
   border: 2px solid #333;
   border-radius: 5px;
 }
 
-.header-text h1 {
-  font-size: 2rem;
-  margin-bottom: 5px;
+.header-text {
+  max-width: 600px;
+  text-align: center;
 }
 
-.header-text p {
-  font-size: 1.1rem;
-  color: #555;
+.header-text h1 {
+  font-size: 2.5rem;
   margin-bottom: 10px;
 }
 
+.header-text p {
+  font-size: 1.3rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
 .header-text nav a {
-  margin-right: 15px;
+  margin: 0 15px;
   text-decoration: none;
   color: #0077cc;
   font-weight: bold;
@@ -58,81 +76,63 @@ body {
 }
 
 /* --------------------------
-  About Section
+  Section Styles
 -------------------------- */
-section#about {
-  padding: 60px 20px;
-  background-color: #fff;
+section {
   max-width: 900px;
+  width: 100%;
+  background-color: #fff;
+  padding: 60px 20px;
   margin: 40px auto;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-section#about h2 {
+section h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #111;
   text-align: center;
-}
-
-section#about p {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 10px;
-  line-height: 1.8;
+  color: #111;
 }
 
 /* --------------------------
   Projects Section
 -------------------------- */
-section#projects {
-  padding: 60px 20px;
-  max-width: 1000px;
-  margin: 0 auto 40px auto;
-}
-
-section#projects h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  text-align: center;
-  color: #111;
-}
-
-section.post article {
+.project-card {
   background-color: #fff;
-  margin-bottom: 40px;
   padding: 20px;
+  margin-bottom: 40px;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
 
-section.post article header h2 {
+.project-card header h2 {
   font-size: 1.5rem;
-  margin-bottom: 10px;
   color: #0077cc;
+  margin-bottom: 10px;
 }
 
-section.post article header .project {
+.project-card header .project {
   font-weight: bold;
   color: #555;
   display: block;
   margin-bottom: 5px;
 }
 
-section.post article p {
+.project-card p {
   margin-bottom: 10px;
   color: #555;
+  line-height: 1.6;
 }
 
-section.post article a.image.fit img {
+.project-card a.image.fit img {
   width: 100%;
   height: auto;
   border-radius: 8px;
   margin: 15px 0;
 }
 
-section.post article a.button {
+.project-card a.button {
   display: inline-block;
   padding: 10px 20px;
   background-color: #0077cc;
@@ -143,35 +143,19 @@ section.post article a.button {
   transition: background-color 0.3s;
 }
 
-section.post article a.button:hover {
+.project-card a.button:hover {
   background-color: #005fa3;
 }
 
 /* --------------------------
   Skills Section
 -------------------------- */
-section#skills {
-  padding: 60px 20px;
-  background-color: #fff;
-  max-width: 900px;
-  margin: 0 auto 40px auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-
-section#skills h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  text-align: center;
-  color: #111;
-}
-
-section#skills ul {
+#skills ul {
   list-style: none;
   text-align: center;
 }
 
-section#skills ul li {
+#skills ul li {
   display: inline-block;
   margin: 10px 15px;
   padding: 10px 15px;
@@ -182,40 +166,24 @@ section#skills ul li {
   transition: transform 0.3s;
 }
 
-section#skills ul li:hover {
+#skills ul li:hover {
   transform: scale(1.05);
 }
 
 /* --------------------------
   Contact Section
 -------------------------- */
-section#contact {
-  padding: 60px 20px;
-  max-width: 900px;
-  margin: 0 auto 40px auto;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-  text-align: center;
-}
-
-section#contact h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #111;
-}
-
-section#contact p {
+#contact p {
   font-size: 1rem;
   margin-bottom: 10px;
 }
 
-section#contact a {
+#contact a {
   color: #0077cc;
   text-decoration: none;
 }
 
-section#contact a:hover {
+#contact a:hover {
   text-decoration: underline;
 }
 
@@ -227,14 +195,20 @@ footer {
   padding: 20px;
   background-color: #222;
   color: #fff;
+  width: 100%;
 }
 
 /* --------------------------
-  Responsive Design
+  Responsive
 -------------------------- */
 @media (max-width: 1024px) {
-  .header-container {
-    gap: 15px;
+  .header-image {
+    position: static;
+    margin-top: 20px;
+  }
+
+  .header-text {
+    text-align: center;
   }
 }
 
@@ -245,16 +219,7 @@ footer {
     text-align: center;
   }
 
-  .header-image img {
-    margin-bottom: 15px;
-  }
-
-  .header-text nav a {
-    display: block;
-    margin: 5px 0;
-  }
-
-  section#skills ul li {
+  #skills ul li {
     display: block;
     margin: 10px auto;
   }
@@ -262,18 +227,15 @@ footer {
 
 @media (max-width: 480px) {
   .header-image img {
-    width: 100px;
-    height: 120px;
+    width: 120px;
+    height: 150px;
   }
 
   .header-text h1 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
-  section#projects h2,
-  section#skills h2,
-  section#about h2,
-  section#contact h2 {
+  section h2 {
     font-size: 1.6rem;
   }
 }
